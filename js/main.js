@@ -27,18 +27,15 @@
                 var tax = subTotal * this.tax;
                 var total = subTotal + tax;
                 console.log(total);
-                return total;
+                var filteredTotal = total.toFixed(2);
+                // var filteredTotal = $filter('currency')(total, 2);
+                // console.log(filteredTotal);   ---------------> My attempt at the currency filter using Angular but I cannot figure out how to call the filter
+                return filteredTotal;
+
                 
             };
 
-            // if (items.discount > 0) {
-            //     $('#price-with-discount').append(`
-            //         <img src="https://tiy-learn-content.s3.amazonaws.com/98350f05-sale_2.png">
-            //         `)
-            // } 
-
-            // ngShow
-
+             
 
         });
 })();

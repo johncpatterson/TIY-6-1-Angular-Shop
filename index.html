@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>Angular Shop</title>
-    <!-- Google Fonts link here -->
+    <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
     <script src="https://use.fontawesome.com/0e26b451b3.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -13,17 +13,30 @@
 </head>
 
 <body>
-    <main ng-controller='StockController as stock'>
-        <ol>
+    <div ng-controller='StockController as stock'>
+        <!-- <ol>
             <li ng-repeat='item in stock.items'>
                 <h4>{{item.name}}</h4>
                 <p>Total Price: ${{stock.figureSalesTax(item.price,item.discount)}}<img src="https://tiy-learn-content.s3.amazonaws.com/98350f05-sale_2.png" ng-Show="item.discount > 0"></p>
                 <p>Quantity: {{item.quantity}}</p>
                 <p>Color: {{item.color}}</p>
             </li>
-        </ol>
-    </main>
-
+        </ol> -->
+        <table id="myTable" class="tablesorter">
+            <tr>
+                <th>Item Name:</th>
+                <th>Total Price:</th>
+                <th>Quantity:</th>
+                <th>Color:</th>
+            </tr>
+            <tr ng-repeat='item in stock.items'>
+                <td>{{item.name}}</td>
+                <td>${{stock.figureSalesTax(item.price,item.discount)}}<img src="https://tiy-learn-content.s3.amazonaws.com/98350f05-sale_2.png" ng-Show="item.discount > 0"></td>
+                <td>{{item.quantity}}</td>
+                <td>{{item.color}}</td>
+            </tr>
+        </table>
+    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.js"></script>
@@ -31,4 +44,3 @@
 </body>
 
 </html>
-

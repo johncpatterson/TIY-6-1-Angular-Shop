@@ -2,3 +2,22 @@
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
+
+table {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 10px;
+  width: 70%;
+  font-family: 'Merriweather', serif; }
+  table tr {
+    border: 1px solid black;
+    border-collapse: collapse;
+    font-size: 16px; }
+  table td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    font-size: 16px; }
+  table th {
+    border: 1px solid black;
+    border-collapse: collapse;
+    font-size: 18px; }
