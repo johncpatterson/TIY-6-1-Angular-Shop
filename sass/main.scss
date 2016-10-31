@@ -1,0 +1,21 @@
+// Sass variables
+$primary-color: black;
+$primary-color-2: lightgray;
+$font-color: black;
+$border-color: #5CA4D7;
+// Sass imports
+// Sass mixins
+@mixin border-box {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+// selectors
+* {
+    @include border-box;
+}
+
+
+
+
