@@ -4,8 +4,10 @@
     angular
         .module('shop', [])
         .controller('StockController', function StockController() {
-            this.tax = .0575;
-            this.items = [
+
+            let vm = this;
+            vm.tax = .0575;
+            vm.items = [
                 { "id": 2957, "name": "widget", "price": 32, "quantity": 203, "color": "red", "discount": 31 },
                 { "id": 89274, "name": "golf club", "price": 98, "quantity": 10, "color": "black", "discount": 0 },
                 { "id": 64, "name": "iPhone", "price": 499, "quantity": 2, "color": "white", "discount": 0 },
@@ -19,16 +21,12 @@
                 { "id": 533, "name": "eggs", "price": 5, "quantity": 12, "color": "brown", "discount": 1 },
                 { "id": 683, "name": "pillow", "price": 27, "quantity": 10, "color": "black", "discount": 12 }
             ];
-            this.discountIcon = false;
-            this.figureSalesTax = function(price, discount) {
+            vm.figureSalesTax = function(price, discount) {
                 var subTotal = price - discount;
-                var tax = subTotal * this.tax;
+                var tax = subTotal * vm.tax;
                 var total = subTotal + tax;
                 console.log(total);
-                var filteredTotal = total.toFixed(2);
-                // var filteredTotal = $filter('currency')(total, 2);
-                // console.log(filteredTotal);   ---------------> My attempt at the currency filter using Angular but I cannot figure out how to call the filter
-                return filteredTotal;
+                return total;
             };
         });
 })();
