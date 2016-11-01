@@ -20,9 +20,7 @@
                 { "id": 683, "name": "pillow", "price": 27, "quantity": 10, "color": "black", "discount": 12 }
             ];
             this.discountIcon = false;
-
-            this.figureSalesTax = function (price, discount) {
-                
+            this.figureSalesTax = function(price, discount) {
                 var subTotal = price - discount;
                 var tax = subTotal * this.tax;
                 var total = subTotal + tax;
@@ -31,11 +29,6 @@
                 // var filteredTotal = $filter('currency')(total, 2);
                 // console.log(filteredTotal);   ---------------> My attempt at the currency filter using Angular but I cannot figure out how to call the filter
                 return filteredTotal;
-
-                
             };
-
-             
-
         });
 })();

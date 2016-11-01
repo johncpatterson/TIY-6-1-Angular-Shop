@@ -13,15 +13,8 @@
 </head>
 
 <body>
-    <div ng-controller='StockController as stock'>
-        <!-- <ol>
-            <li ng-repeat='item in stock.items'>
-                <h4>{{item.name}}</h4>
-                <p>Total Price: ${{stock.figureSalesTax(item.price,item.discount)}}<img src="https://tiy-learn-content.s3.amazonaws.com/98350f05-sale_2.png" ng-Show="item.discount > 0"></p>
-                <p>Quantity: {{item.quantity}}</p>
-                <p>Color: {{item.color}}</p>
-            </li>
-        </ol> -->
+    <div class="table-container" ng-controller='StockController as stock'>
+        <h2 class="table-header">Items in Stock:</h2>
         <table id="myTable" class="tablesorter">
             <tr>
                 <th>Item Name:</th>
