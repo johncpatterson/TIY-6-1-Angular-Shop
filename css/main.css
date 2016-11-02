@@ -1,3 +1,11 @@
+[ng\:cloak],
+[ng-cloak],
+[data-ng-cloak],
+[x-ng-cloak],
+.ng-cloak,
+.x-ng-cloak {
+  display: none !important; }
+
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -8,29 +16,41 @@
 
 .table-container {
   margin: 30px 0; }
+  .table-container h1 {
+    font-family: 'Sansita One', cursive; }
+  .table-container img {
+    max-width: 70px;
+    max-height: 70px; }
 
 table {
-  border: 1px solid black;
   border-collapse: collapse;
   padding: 10px;
   margin: 0 25%;
   width: 50%;
   font-family: 'Merriweather', serif; }
   table tr {
-    border: 1px solid black;
     border-collapse: collapse;
+    border-bottom: none;
     font-size: 18px;
     padding: 10px; }
   table td {
-    border: 1px solid black;
     border-collapse: collapse;
     font-size: 18px;
     padding: 10px; }
   table th {
-    border: 1px solid black;
     border-collapse: collapse;
     font-size: 20px;
     padding: 10px;
-    text-decoration: underline; }
-  table tbody tr:nth-child(odd) {
+    text-decoration: underline;
+    background-color: #69ace0; }
+  table tr:nth-child(odd) {
     background-color: #CFCFCF; }
+
+.form-container {
+  margin-top: 40px; }
+
+input.ng-invalid {
+  background-color: #fdd; }
+
+button {
+  margin: 10px auto; }

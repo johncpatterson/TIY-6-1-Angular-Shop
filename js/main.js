@@ -4,8 +4,8 @@
     angular
         .module('shop', [])
         .controller('StockController', function StockController() {
-
             let vm = this;
+
             vm.tax = .0575;
             vm.items = [
                 { "id": 2957, "name": "widget", "price": 32, "quantity": 203, "color": "red", "discount": 31 },
@@ -22,11 +22,16 @@
                 { "id": 683, "name": "pillow", "price": 27, "quantity": 10, "color": "black", "discount": 12 }
             ];
             vm.figureSalesTax = function(price, discount) {
-                var subTotal = price - discount;
-                var tax = subTotal * vm.tax;
-                var total = subTotal + tax;
-                console.log(total);
+                let subTotal = price - discount;
+                let tax = subTotal * vm.tax;
+                let total = subTotal + tax;
                 return total;
             };
+
+            vm.submit = function(taco) {
+                vm.items.push(taco);
+                vm.form = {};
+                
+            }
         });
 })();

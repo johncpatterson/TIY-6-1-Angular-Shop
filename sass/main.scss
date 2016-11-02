@@ -1,3 +1,12 @@
+[ng\:cloak],
+[ng-cloak],
+[data-ng-cloak],
+[x-ng-cloak],
+.ng-cloak,
+.x-ng-cloak {
+    display: none !important;
+}
+
 // Sass variables
 $primary-color: black;
 $primary-color-2: lightgray;
@@ -15,41 +24,60 @@ $border-color: #5CA4D7;
 * {
     @include border-box;
 }
+
 .table-header {
-	text-align: center;
+    text-align: center;
 }
 
 .table-container {
     margin: 30px 0;
+    h1 {
+        font-family: 'Sansita One', cursive;
+    }
+    img {
+        max-width: 70px;
+        max-height: 70px;
+    }
 }
 
 table {
-    border: 1px solid black;
+    // border: 1px solid black;
     border-collapse: collapse;
     padding: 10px;
     margin: 0 25%;
     width: 50%;
     font-family: 'Merriweather', serif;
     tr {
-        border: 1px solid black;
         border-collapse: collapse;
+        border-bottom: none;
         font-size: 18px;
         padding: 10px;
     }
     td {
-        border: 1px solid black;
         border-collapse: collapse;
         font-size: 18px;
         padding: 10px;
     }
     th {
-        border: 1px solid black;
         border-collapse: collapse;
         font-size: 20px;
         padding: 10px;
         text-decoration: underline;
+        background-color: #69ace0;
     }
-    tbody tr:nth-child(odd) {
+    tr:nth-child(odd) {
         background-color: #CFCFCF;
     }
+}
+
+.form-container {
+    margin-top: 40px;
+}
+
+input.ng-invalid {
+    background-color: #fdd;
+}
+
+button {
+    margin: 10px auto;
 }
