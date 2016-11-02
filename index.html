@@ -20,6 +20,7 @@
                 <tr>
                     <th>Item Name:</th>
                     <th>Total Price:</th>
+                    <th>Discount:</th>
                     <th>Quantity:</th>
                     <th>Color:</th>
                 </tr>
@@ -27,8 +28,10 @@
                     <!-- optional argument to sort by price column: | orderBy: 'price-discount' -->
                     <td>{{item.name}}</td>
                     <td>{{stock.figureSalesTax(item.price,item.discount) | currency }}<img src="https://tiy-learn-content.s3.amazonaws.com/98350f05-sale_2.png" ng-Show="item.discount > 0"></td>
+                    <td>{{item.discount | currency}}</td>
                     <td>{{item.quantity}}</td>
-                    <td>{{item.color}}</td>
+                    <td>
+                        <div class="product-color" ng-style="{backgroundColor:'{{item.color}}'}"></div>{{item.color}}</td>
                 </tr>
         </div>
         </table>
@@ -44,6 +47,11 @@
                 <input type="number" name="price" ng-model="stock.form.price" class="form-control" required>
                 <div class="alert alert-info" ng-show="newItemForm.price.$error.required">Please enter the new item price</div>
                 <br>
+                <label for="item-discount">Item Discount:</label>
+                <br>
+                <input type="number" name="discount" ng-model="stock.form.discount" class="form-control" required>
+                <div class="alert alert-info" ng-show="newItemForm.discount.$error.required">Please enter the new item discount</div>
+                <br>
                 <label for="item-quantity">Item Quantity:</label>
                 <br>
                 <input type="number" name="quantity" ng-model="stock.form.quantity" class="form-control" required>
@@ -54,10 +62,6 @@
                 <input type="text" name="color" ng-model="stock.form.color" class="form-control" required>
                 <div class="alert alert-info" ng-show="newItemForm.color.$error.required">Please enter the new item color</div>
                 <br>
-                <label for="item-discount">Item Discount:</label>
-                <br>
-                <input type="number" name="discount" ng-model="stock.form.discount" class="form-control" required>
-                <div class="alert alert-info" ng-show="newItemForm.discount.$error.required">Please enter the new item discount</div>
                 <br>
                 <br>
                 <button class="btn btn-success btn-block" ng-disabled="newItemForm.$invalid" type="submit" id="submit" value="add items to inventory">Add item to Inventory</button>

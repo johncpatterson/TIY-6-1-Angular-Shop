@@ -70,6 +70,15 @@ table {
     }
 }
 
+.product-color {
+    display: inline-block;
+    height: 25px;
+    width: 25px;
+    border: 1px solid black;
+    border-radius: 4px;
+    margin-right: 8px;
+}
+
 .form-container {
     margin-top: 40px;
 }
