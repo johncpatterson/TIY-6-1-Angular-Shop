@@ -3,6 +3,8 @@
 const gulp = require('gulp');
 const sass = require('gulp-sass');
 const browserSync = require('browser-sync').create();
+// const notify = require("gulp-notify");
+
 // const babel = require('gulp-babel');
 // const eslint = require('gulp-eslint');
 // const notify = require("gulp-notify");
@@ -39,6 +41,9 @@ gulp.task('browserSync', function() {
         },
     })
 })
+
+// gulp.src("./src/test.ext")
+//   .pipe(notify("Hello Gulp!"));
 
 gulp.task('watch', ['browserSync', 'sass'], function() {
     gulp.watch(['./*.html', './js/*.js', './sass/*.scss'], ['sass']);
