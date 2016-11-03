@@ -52,11 +52,13 @@ table {
         border-bottom: none;
         font-size: 18px;
         padding: 10px;
+
     }
     td {
         border-collapse: collapse;
         font-size: 18px;
         padding: 10px;
+        
     }
     th {
         border-collapse: collapse;
@@ -65,9 +67,9 @@ table {
         text-decoration: underline;
         background-color: #69ace0;
     }
-    tr:nth-child(odd) {
-        background-color: #CFCFCF;
-    }
+    // tr:nth-child(odd) {
+    //     background-color: #CFCFCF;
+    // }
 }
 
 .product-color {

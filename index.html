@@ -24,7 +24,7 @@
                     <th>Quantity:</th>
                     <th>Color:</th>
                 </tr>
-                <tr ng-cloak ng-repeat="item in stock.items | orderBy: 'quantity'">
+                <tr ng-cloak ng-repeat="item in stock.items track by $index">
                     <!-- optional argument to sort by price column: | orderBy: 'price-discount' -->
                     <td>{{item.name}}</td>
                     <td>{{stock.figureSalesTax(item.price,item.discount) | currency }}<img src="https://tiy-learn-content.s3.amazonaws.com/98350f05-sale_2.png" ng-Show="item.discount > 0"></td>
@@ -36,6 +36,12 @@
         </div>
         </table>
         <div class="form-container container">
+            <div>{{user.name}}</div>
+            <form name="userLoginForm" novalidate ng-controller='LoginController as login' ng-submit="login.submit(login.form)">
+                <label for="user">User Name:</label>    
+                <input type="text" name="user" class="form-control" ng-model="login.form.user" required>
+                <button class="btn btn-success btn-block" ng-disabled="userLoginForm.$invalid" type="submit" value="user login">Log In</button>
+            </form>    
             <form name="newItemForm" novalidate ng-submit="stock.submit(stock.form)">
                 <label for="item-name">Item Name:</label>
                 <br>
@@ -71,7 +77,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.js"></script>
-    <script src="js/main.js"></script>
+    <script src="main.js"></script>
+    <script src='factories/storage.js'></script>
+    <script src='controllers/stock.js'></script>
 </body>
 
 </html>
