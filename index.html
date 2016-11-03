@@ -13,6 +13,24 @@
 </head>
 
 <body>
+    <header ng-controller='LoginController as login'>
+        <div class="login-info-container">
+            <div class="" ng-if="login.user.name">
+                <span class="logged-in-user-name" >{{login.user.name}}</span><span class="logged-in-date"> logged in on: {{login.user.time | date:'MM/dd/yyyy @ h:mma'}}</span>
+                <!-- <button class="btn btn-success btn-block" ng-submit="logout.submit" ng-disabled="userLoginForm.$invalid" type="submit" value="user logout">Log Out</button> -->
+            </div>
+            <div ng-if="!login.user.name">
+                <h3>"You are not logged in"</h3>
+            </div>
+        </div>
+        <div class="login-form-container">
+            <form name="userLoginForm" novalidate ng-submit="login.submit(login.form.user)">
+                <label for="user">Login with your User Name:</label>
+                <input type="text" name="user" class="form-control" ng-model="login.form.user" required>
+                <button class="btn btn-primary btn-block" ng-disabled="userLoginForm.$invalid" type="submit" value="user login">Log In</button>
+            </form>
+        </div>
+    </header>
     <div class="container-fluid" ng-controller='StockController as stock'>
         <div class="table-container">
             <h1 class="table-header"><img src="https://angular.io/resources/images/logos/angular2/angular.svg" alt="angular logo">Angular Shop:</h1>
@@ -25,23 +43,17 @@
                     <th>Color:</th>
                 </tr>
                 <tr ng-cloak ng-repeat="item in stock.items track by $index">
-                    <!-- optional argument to sort by price column: | orderBy: 'price-discount' -->
                     <td>{{item.name}}</td>
                     <td>{{stock.figureSalesTax(item.price,item.discount) | currency }}<img src="https://tiy-learn-content.s3.amazonaws.com/98350f05-sale_2.png" ng-Show="item.discount > 0"></td>
                     <td>{{item.discount | currency}}</td>
                     <td>{{item.quantity}}</td>
                     <td>
-                        <div class="product-color" ng-style="{backgroundColor:'{{item.color}}'}"></div>{{item.color}}</td>
+                        <div class="product-color" ng-style="{backgroundColor:'{{item.color}}'}"></div>{{item.color}}
+                    </td>
                 </tr>
         </div>
         </table>
         <div class="form-container container">
-            <div>{{user.name}}</div>
-            <form name="userLoginForm" novalidate ng-controller='LoginController as login' ng-submit="login.submit(login.form)">
-                <label for="user">User Name:</label>    
-                <input type="text" name="user" class="form-control" ng-model="login.form.user" required>
-                <button class="btn btn-success btn-block" ng-disabled="userLoginForm.$invalid" type="submit" value="user login">Log In</button>
-            </form>    
             <form name="newItemForm" novalidate ng-submit="stock.submit(stock.form)">
                 <label for="item-name">Item Name:</label>
                 <br>
@@ -81,6 +93,12 @@
     <script src='factories/storage.js'></script>
     <script src='factories/users.js'></script>
     <script src='controllers/stock.js'></script>
+    <script src='controllers/header.js'></script>
+    <script src='controllers/login.js'></script>
+
+
+
 </body>
+
 
 </html>

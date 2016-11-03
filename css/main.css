@@ -11,6 +11,29 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
+header {
+  background-color: lightgray; }
+
+.container {
+  max-width: 50%; }
+
+.login-info-container {
+  font-family: 'Merriweather', serif;
+  font-size: 18px;
+  float: right;
+  margin-top: 32px;
+  margin-right: 20px; }
+  .login-info-container span.logged-in-user-name {
+    font-size: 18px; }
+  .login-info-container span.logged-in-date {
+    font-size: 18px; }
+
+.login-form-container {
+  max-width: 30%;
+  display: inline-block;
+  margin-left: 20px;
+  margin-top: 10px; }
+
 .table-header {
   text-align: center; }
 
@@ -53,10 +76,15 @@ table {
   margin-right: 8px; }
 
 .form-container {
-  margin-top: 40px; }
+  margin-top: 40px;
+  padding-top: 30px;
+  border-top: 2px solid lightgray; }
 
 input.ng-invalid {
   background-color: #fdd; }
+
+input.ng-valid {
+  background-color: #a2f9bb; }
 
 button {
   margin: 10px auto; }

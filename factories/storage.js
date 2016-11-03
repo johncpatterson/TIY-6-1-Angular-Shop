@@ -21,13 +21,14 @@
 
             const saveItems = function(item) {
                 items.push(item);
-                localStorage.setItem('item', JSON.stringify (items));
+                localStorage.setItem('item', JSON.stringify(items));
                 return items;
             }
 
             const getItems = function() {
                 if (localStorage.getItem('item')) {
                     var item = (JSON.parse(localStorage.getItem('item')));
+
                 } else {
                     var item = items;
                 }
