@@ -6,7 +6,7 @@
             const logIn = function(username) {
                 var userData = {
                     name: form.user,
-                    time: Date.now(); 
+                    time: Date.now()
                 }
             return userData;
             }
