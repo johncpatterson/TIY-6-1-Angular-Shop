@@ -15,7 +15,7 @@
 <body>
     <header ng-controller='LoginController as login'>
         <div class="login-info-container">
-            <div class="" ng-if="login.user.name">
+            <div ng-if="login.user.name">
                 <span class="logged-in-user-name">{{login.user.name}}</span><span class="logged-in-date"> logged in on: {{login.user.time | date:'MM/dd/yyyy @ h:mma'}}</span>
                 <button class="btn btn-primary btn-block" ng-if="login.user.name" ng-click="login.onclick()" type="submit" value="user logout">Log Out</button>
             </div>
@@ -26,7 +26,7 @@
         <div class="login-form-container">
             <form name="userLoginForm" novalidate ng-submit="login.submit(login.form.user)">
                 <label for="user">Login with your User Name:</label>
-                <input type="text" name="user" class="form-control" ng-model="login.form.user">
+                <input type="text" name="user" class="form-control" ng-model="login.form.user" required>
                 <button class="btn btn-primary btn-block" ng-disabled="userLoginForm.$invalid" type="submit" value="user login">Log In</button>
             </form>
         </div>
