@@ -27,6 +27,7 @@ $border-color: #5CA4D7;
 
 header {
     background-color: lightgray;
+    border-bottom: 1px solid gray;
 }
 
 .container {
@@ -39,28 +40,41 @@ header {
     float: right;
     margin-top: 32px;
     margin-right: 20px;
+    display: inline-block;
     span.logged-in-user-name {
         font-size: 18px;
     }
     span.logged-in-date {
         font-size: 18px;
     }
+    button {
+        max-width: 225px;
+    }
+    .not-logged-in-text {
+        span {
+            font-weight: 500;
+        }
+    }
 }
 
 .login-form-container {
+    font-family: 'Merriweather', serif;
+    font-size: 16px;
     max-width: 30%;
     display: inline-block;
     margin-left: 20px;
     margin-top: 10px;
-
 }
 
 .table-header {
     text-align: center;
+    margin-bottom: 40px;
+    margin-top: 40px;
 }
 
 .table-container {
     margin: 30px 0;
+    padding-bottom: 40px;
     h1 {
         font-family: 'Sansita One', cursive;
     }
@@ -95,9 +109,6 @@ table {
         text-decoration: underline;
         background-color: #69ace0;
     }
-    // tr:nth-child(odd) {
-    //     background-color: #CFCFCF;
-    // }
 }
 
 .product-color {
@@ -110,9 +121,8 @@ table {
 }
 
 .form-container {
-    margin-top: 40px;
     padding-top: 30px;
-    border-top: 2px solid lightgray;
+    border-top: 3px solid lightgray;
 }
 
 input.ng-invalid {
@@ -125,4 +135,11 @@ input.ng-valid {
 
 button {
     margin: 10px auto;
+}
+
+.footer {
+    height: 100px;
+    background-color: lightgray;
+    border-top: 1px solid gray;
+    margin-top: 65px;
 }

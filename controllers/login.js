@@ -13,6 +13,12 @@
             vm.user = returnedUser;
 
             
+            vm.onclick = function() {
+                users.logOut();
+                vm.user = 'Not logged in';
+            }
+
+
 
         });
 

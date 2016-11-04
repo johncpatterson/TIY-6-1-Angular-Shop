@@ -12,7 +12,8 @@
   box-sizing: border-box; }
 
 header {
-  background-color: lightgray; }
+  background-color: lightgray;
+  border-bottom: 1px solid gray; }
 
 .container {
   max-width: 50%; }
@@ -22,23 +23,33 @@ header {
   font-size: 18px;
   float: right;
   margin-top: 32px;
-  margin-right: 20px; }
+  margin-right: 20px;
+  display: inline-block; }
   .login-info-container span.logged-in-user-name {
     font-size: 18px; }
   .login-info-container span.logged-in-date {
     font-size: 18px; }
+  .login-info-container button {
+    max-width: 225px; }
+  .login-info-container .not-logged-in-text span {
+    font-weight: 500; }
 
 .login-form-container {
+  font-family: 'Merriweather', serif;
+  font-size: 16px;
   max-width: 30%;
   display: inline-block;
   margin-left: 20px;
   margin-top: 10px; }
 
 .table-header {
-  text-align: center; }
+  text-align: center;
+  margin-bottom: 40px;
+  margin-top: 40px; }
 
 .table-container {
-  margin: 30px 0; }
+  margin: 30px 0;
+  padding-bottom: 40px; }
   .table-container h1 {
     font-family: 'Sansita One', cursive; }
   .table-container img {
@@ -76,9 +87,8 @@ table {
   margin-right: 8px; }
 
 .form-container {
-  margin-top: 40px;
   padding-top: 30px;
-  border-top: 2px solid lightgray; }
+  border-top: 3px solid lightgray; }
 
 input.ng-invalid {
   background-color: #fdd; }
@@ -88,3 +98,9 @@ input.ng-valid {
 
 button {
   margin: 10px auto; }
+
+.footer {
+  height: 100px;
+  background-color: lightgray;
+  border-top: 1px solid gray;
+  margin-top: 65px; }

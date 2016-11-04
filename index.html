@@ -16,17 +16,17 @@
     <header ng-controller='LoginController as login'>
         <div class="login-info-container">
             <div class="" ng-if="login.user.name">
-                <span class="logged-in-user-name" >{{login.user.name}}</span><span class="logged-in-date"> logged in on: {{login.user.time | date:'MM/dd/yyyy @ h:mma'}}</span>
-                <!-- <button class="btn btn-success btn-block" ng-submit="logout.submit" ng-disabled="userLoginForm.$invalid" type="submit" value="user logout">Log Out</button> -->
+                <span class="logged-in-user-name">{{login.user.name}}</span><span class="logged-in-date"> logged in on: {{login.user.time | date:'MM/dd/yyyy @ h:mma'}}</span>
+                <button class="btn btn-primary btn-block" ng-if="login.user.name" ng-click="login.onclick()" type="submit" value="user logout">Log Out</button>
             </div>
-            <div ng-if="!login.user.name">
-                <h3>"You are not logged in"</h3>
+            <div class="not-logged-in-text alert alert-danger" ng-if="!login.user.name">
+                <span>"You are not logged in"</span>
             </div>
         </div>
         <div class="login-form-container">
             <form name="userLoginForm" novalidate ng-submit="login.submit(login.form.user)">
                 <label for="user">Login with your User Name:</label>
-                <input type="text" name="user" class="form-control" ng-model="login.form.user" required>
+                <input type="text" name="user" class="form-control" ng-model="login.form.user">
                 <button class="btn btn-primary btn-block" ng-disabled="userLoginForm.$invalid" type="submit" value="user login">Log In</button>
             </form>
         </div>
@@ -51,40 +51,40 @@
                         <div class="product-color" ng-style="{backgroundColor:'{{item.color}}'}"></div>{{item.color}}
                     </td>
                 </tr>
+            </table>
         </div>
-        </table>
-        <div class="form-container container">
-            <form name="newItemForm" novalidate ng-submit="stock.submit(stock.form)">
-                <label for="item-name">Item Name:</label>
-                <br>
-                <input type="text" name="name" ng-model="stock.form.name" class="form-control" required>
-                <div class="alert alert-info" ng-show="newItemForm.name.$error.required">Please enter the new item name</div>
-                <br>
-                <label for="item-price">Item Price:</label>
-                <br>
-                <input type="number" name="price" ng-model="stock.form.price" class="form-control" required>
-                <div class="alert alert-info" ng-show="newItemForm.price.$error.required">Please enter the new item price</div>
-                <br>
-                <label for="item-discount">Item Discount:</label>
-                <br>
-                <input type="number" name="discount" ng-model="stock.form.discount" class="form-control" required>
-                <div class="alert alert-info" ng-show="newItemForm.discount.$error.required">Please enter the new item discount</div>
-                <br>
-                <label for="item-quantity">Item Quantity:</label>
-                <br>
-                <input type="number" name="quantity" ng-model="stock.form.quantity" class="form-control" required>
-                <div class="alert alert-info" ng-show="newItemForm.quantity.$error.required">Please enter the new item quantity</div>
-                <br>
-                <label for="item-color">Item Color:</label>
-                <br>
-                <input type="text" name="color" ng-model="stock.form.color" class="form-control" required>
-                <div class="alert alert-info" ng-show="newItemForm.color.$error.required">Please enter the new item color</div>
-                <br>
-                <br>
-                <br>
-                <button class="btn btn-success btn-block" ng-disabled="newItemForm.$invalid" type="submit" id="submit" value="add items to inventory">Add item to Inventory</button>
-            </form>
-        </div>
+    </div>
+    <div class="form-container container">
+        <form name="newItemForm" novalidate ng-submit="stock.submit(stock.form)">
+            <label for="item-name">Item Name:</label>
+            <br>
+            <input type="text" name="name" ng-model="stock.form.name" class="form-control" required>
+            <div class="alert alert-info" ng-show="newItemForm.name.$error.required">Please enter the new item name</div>
+            <br>
+            <label for="item-price">Item Price:</label>
+            <br>
+            <input type="number" name="price" ng-model="stock.form.price" class="form-control" required>
+            <div class="alert alert-info" ng-show="newItemForm.price.$error.required">Please enter the new item price</div>
+            <br>
+            <label for="item-discount">Item Discount:</label>
+            <br>
+            <input type="number" name="discount" ng-model="stock.form.discount" class="form-control" required>
+            <div class="alert alert-info" ng-show="newItemForm.discount.$error.required">Please enter the new item discount</div>
+            <br>
+            <label for="item-quantity">Item Quantity:</label>
+            <br>
+            <input type="number" name="quantity" ng-model="stock.form.quantity" class="form-control" required>
+            <div class="alert alert-info" ng-show="newItemForm.quantity.$error.required">Please enter the new item quantity</div>
+            <br>
+            <label for="item-color">Item Color:</label>
+            <br>
+            <input type="text" name="color" ng-model="stock.form.color" class="form-control" required>
+            <div class="alert alert-info" ng-show="newItemForm.color.$error.required">Please enter the new item color</div>
+            <br>
+            <button class="btn btn-success btn-block" ng-disabled="newItemForm.$invalid" type="submit" id="submit" value="add items to inventory">Add item to Inventory</button>
+        </form>
+    </div>
+    <div class="footer">
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -95,10 +95,6 @@
     <script src='controllers/stock.js'></script>
     <script src='controllers/header.js'></script>
     <script src='controllers/login.js'></script>
-
-
-
 </body>
-
 
 </html>
