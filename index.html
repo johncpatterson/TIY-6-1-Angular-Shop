@@ -14,7 +14,7 @@
 
 <body>
     <header ng-controller='LoginController as login'>
-        <div class="login-info-container">
+        <div ng-cloak class="login-info-container">
             <div ng-if="login.user.name">
                 <span class="logged-in-user-name">{{login.user.name}}</span><span class="logged-in-date"> logged in on: {{login.user.time | date:'MM/dd/yyyy @ h:mma'}}</span>
                 <button class="btn btn-primary btn-block" ng-if="login.user.name" ng-click="login.onclick()" type="submit" value="user logout">Log Out</button>
